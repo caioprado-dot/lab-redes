@@ -7,9 +7,10 @@ public class Client {
         int serverPort = 12345; // Server port
         
         try (Socket socket = new Socket(serverAddress, serverPort);
-             long startTime = System.currentTimeMillis(); // Start time for transfer
              InputStream serverInputStream = socket.getInputStream()) {
-             
+
+            long startTime = System.currentTimeMillis(); // Start time for transfer
+            
             DataInputStream dis = new DataInputStream(serverInputStream);
             long fileSize = dis.readLong(); // Read the file size
             
